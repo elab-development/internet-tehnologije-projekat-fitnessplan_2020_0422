@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     public const USER = 'user';
     public const ADMIN = 'admin';
-    public const TRAINER = 'trainer'
+    public const TRAINER = 'trainer';
 
     /**
      * The attributes that are mass assignable.
