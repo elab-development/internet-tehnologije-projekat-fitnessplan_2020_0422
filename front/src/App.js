@@ -1,25 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from "./components/Navigation";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
+import Exercises from "./pages/Exercises";
+import Admin from "./pages/Admin";
+import Login from "./pages/Login";
+import Workouts from "./pages/Workouts";
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          test
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navigation />
+
+      <Container>
+      <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/exercises" element={<Exercises />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/workouts" element={<Workouts />} />
+            </Routes>
+        </BrowserRouter>
+
+      </Container>
+
+        
+    </>
   );
 }
 
