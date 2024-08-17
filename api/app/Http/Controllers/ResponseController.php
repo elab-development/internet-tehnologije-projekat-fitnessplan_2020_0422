@@ -13,12 +13,12 @@ class ResponseController extends Controller
         ], 200);
     }
 
-    public function errorResponse(string $message = '',$errors = []): \Illuminate\Http\JsonResponse
+    public function errorResponse(string $message = '',$errors = [], $code = 200): \Illuminate\Http\JsonResponse
     {
         return response()->json([
             'success' => false,
             'message' => $message,
             'errors' => $errors,
-        ]);
+        ], $code);
     }
 }
