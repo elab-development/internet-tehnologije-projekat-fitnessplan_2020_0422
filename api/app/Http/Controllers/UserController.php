@@ -64,4 +64,15 @@ class UserController extends ResponseController
 
         return $this->successResponse(new UserResource($user), 'User registered successfully.', 201);
     }
+
+    public function randomUserFromAPI(Request $request)
+    {
+        $client = new \GuzzleHttp\Client();
+
+        $response = $client->request('GET', 'https://randomuser.me/api/?results=2');
+
+        $users = json_decode($response->getBody()->getContents())->results;
+
+        return $this->successResponse($users, 'Random users retrieved successfully.');
+    }
 }
