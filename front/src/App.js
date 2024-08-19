@@ -8,30 +8,29 @@ import Exercises from "./pages/Exercises";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Workouts from "./pages/Workouts";
-import { Container } from 'react-bootstrap';
-import About from './pages/About';
+import {Container} from "react-bootstrap";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <Navigation />
 
-      <Container>
-      <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} /> 
-                <Route path="/exercises" element={<Exercises />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/workouts" element={<Workouts />} />
+        <Container>
+            <div className="main">
 
-            </Routes>
-        </BrowserRouter>
-
-      </Container>
-
-        
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/exercises" element={<Exercises />} />
+                        <Route path="/admin" element={<Admin />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/workouts" element={<Workouts />} />
+                    </Routes>
+                </BrowserRouter>
+            </div>
+        </Container>
+        <Footer />
     </>
   );
 }
