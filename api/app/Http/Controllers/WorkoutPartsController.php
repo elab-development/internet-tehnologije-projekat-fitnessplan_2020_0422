@@ -75,4 +75,11 @@ class WorkoutPartsController extends ResponseController
 
         return $this->successResponse($parts, 'Workout parts retrieved successfully.');
     }
+
+    public function findByWorkout($workoutId)
+    {
+        $workoutParts = WorkoutPart::where('workout_id', $workoutId)->get();
+
+        return $this->successResponse(WorkoutPartResource::collection($workoutParts), 'Workout parts retrieved successfully.');
+    }
 }
