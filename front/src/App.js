@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Workouts from "./pages/Workouts";
 import {Container} from "react-bootstrap";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<About />} />
                         <Route path="/exercises" element={<Exercises />} />
                         <Route path="/admin" element={<Admin />} />
                         <Route path="/login" element={<Login />} />
