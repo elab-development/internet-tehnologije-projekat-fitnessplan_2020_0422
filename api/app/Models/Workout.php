@@ -16,7 +16,7 @@ class Workout extends Model
     protected $fillable = [
         'name',
         'workout_date',
-        'intentisty_id',
+        'intensity_id',
     ];
 
     public function intensity()
