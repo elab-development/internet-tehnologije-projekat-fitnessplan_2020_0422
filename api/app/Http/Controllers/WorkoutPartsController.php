@@ -64,7 +64,7 @@ class WorkoutPartsController extends ResponseController
 
     public function paginateParts(Request $request)
     {
-        $perPage = $request->get('per_page', 10);
+        $perPage = $request->get('per_page', 30);
 
         $parts = DB::table('workout_parts')
             ->select('workout_parts.id', 'workout_parts.sets', 'workout_parts.reps', 'workout_parts.rest', 'workout_parts.info', 'exercises.name as exercise_name', 'workouts.name as workout_name')
