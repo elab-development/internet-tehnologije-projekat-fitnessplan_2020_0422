@@ -65,4 +65,15 @@ class WorkoutController extends ResponseController
 
         return $this->successResponse(WorkoutResource::collection($workouts), 'Workouts retrieved successfully');
     }
+
+    public function getTemperature(Request $request)
+    {
+        $client = new \GuzzleHttp\Client();
+
+        $response = $client->request('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=44.8125&lon=20.4612&appid=6c7c340fbae803841b1402988af53dc8');
+
+        $data = json_decode($response->getBody()->getContents());
+
+        return $this->successResponse($data, 'Temperature retrieved successfully');
+    }
 }

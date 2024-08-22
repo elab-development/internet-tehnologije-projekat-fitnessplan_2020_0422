@@ -4,6 +4,7 @@ import {Carousel, Image} from "react-bootstrap";
 import rambo from "../slike/rambo.jpg";
 import traktorskaguma from "../slike/traktorskaguma.jpg";
 import fitness from "../slike/fitness-ai.png";
+import TemperatureDecider from '../components/TemperatureDecider';
 
 const Home = () => {
 
@@ -47,6 +48,9 @@ const Home = () => {
                     })
                 }
             </Carousel>
+
+
+            <TemperatureDecider />
         </>
     );
 };

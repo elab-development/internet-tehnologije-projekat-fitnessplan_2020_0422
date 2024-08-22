@@ -54,3 +54,4 @@ Route::get('random', [\App\Http\Controllers\UserController::class, 'randomUserFr
 Route::get('graph', [ExerciseController::class, 'groupedData']);
 
 Route::get('find-by-workout/{workoutId}', [\App\Http\Controllers\WorkoutPartsController::class, 'findByWorkout'])->middleware('auth:sanctum');
+Route::get('temperatura', [\App\Http\Controllers\WorkoutController::class, 'getTemperature']);
