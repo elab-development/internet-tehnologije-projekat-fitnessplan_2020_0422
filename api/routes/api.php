@@ -51,7 +51,7 @@ Route::delete('workout-parts/{id}', [\App\Http\Controllers\WorkoutPartsControlle
 
 Route::get('parts-paginate', [\App\Http\Controllers\WorkoutPartsController::class, 'paginateParts']);
 Route::get('random', [\App\Http\Controllers\UserController::class, 'randomUserFromAPI']);
-Route::get('graph', [ExerciseController::class, 'groupedData']);
+Route::get('graph', [ExerciseController::class, 'groupedData'])->middleware('auth:sanctum')->middleware('admin');
 
 Route::get('find-by-workout/{workoutId}', [\App\Http\Controllers\WorkoutPartsController::class, 'findByWorkout'])->middleware('auth:sanctum');
 Route::get('temperatura', [\App\Http\Controllers\WorkoutController::class, 'getTemperature']);
